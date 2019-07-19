@@ -14,6 +14,8 @@
 		18EF11DC22DFC9C4008643A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EF11DA22DFC9C4008643A0 /* LaunchScreen.storyboard */; };
 		18EF11E422DFCB92008643A0 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF11E322DFCB92008643A0 /* AddItemViewController.swift */; };
 		18EF11E622DFD956008643A0 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF11E522DFD956008643A0 /* CompleteViewController.swift */; };
+		18EF11E822E0E7A7008643A0 /* TableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF11E722E0E7A7008643A0 /* TableTableViewController.swift */; };
+		18EF11EA22E10F30008643A0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF11E922E10F30008643A0 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		18EF11DD22DFC9C4008643A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18EF11E322DFCB92008643A0 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		18EF11E522DFD956008643A0 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		18EF11E722E0E7A7008643A0 /* TableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTableViewController.swift; sourceTree = "<group>"; };
+		18EF11E922E10F30008643A0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			children = (
 				18EF11CE22DFC9C2008643A0 /* AppDelegate.swift */,
 				18EF11D222DFC9C2008643A0 /* Main.storyboard */,
+				18EF11E922E10F30008643A0 /* MapViewController.swift */,
+				18EF11E722E0E7A7008643A0 /* TableTableViewController.swift */,
 				18EF11E522DFD956008643A0 /* CompleteViewController.swift */,
 				18EF11E322DFCB92008643A0 /* AddItemViewController.swift */,
 				18EF11D822DFC9C4008643A0 /* Assets.xcassets */,
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EF11E822E0E7A7008643A0 /* TableTableViewController.swift in Sources */,
+				18EF11EA22E10F30008643A0 /* MapViewController.swift in Sources */,
 				18EF11D722DFC9C2008643A0 /* SHARE3.xcdatamodeld in Sources */,
 				18EF11CF22DFC9C2008643A0 /* AppDelegate.swift in Sources */,
 				18EF11E422DFCB92008643A0 /* AddItemViewController.swift in Sources */,
