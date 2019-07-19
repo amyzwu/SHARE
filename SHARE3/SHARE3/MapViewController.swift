@@ -26,7 +26,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var MapView: MKMapView!
     @IBOutlet weak var nameOfPlace: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
-    @IBOutlet weak var websiteLink: UILabel!
+    @IBOutlet weak var mediaURL: UILabel!
+    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var linkButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.MapView.delegate = self
@@ -40,10 +43,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.delegate = self
             locationManager.startUpdatingLocation()
+                addPlaces()
         } else {
             print("Please turn on location services or GPS")
             
         }
+        callButton.isHidden = true
+        linkButton.isHidden = true
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.locationManager.stopUpdatingLocation()
@@ -64,9 +70,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         return annotationView
     }
     let shelterLocations = [
-    ["name" : "Goodwill Southern California Donation Center","latitude" : 34.048456,"longitude" : -118.435387,"mediaURL" : "goodwillsocal.org","phoneNumber" : "3104412740"],
-    ["name" : "The Salvation Army Family Store & Donation Center","latitude" : 33.959841,"longitude" : 33.959841,"mediaURL" : "Satruck.org","phoneNumber" : "3237597681"],
-    ["name" : "A Sense Of Home","latitude" : 33.916738,"longitude" : -118.335002,"mediaURL" : "Asenseofhome.org","phoneNumber" : "3108048998"],
+        ["name" : "Goodwill Southern California Donation Center","latitude" : 34.048456,"longitude" : -118.435387,"mediaURL" : "https://www.goodwillsocal.org","phoneNumber" : "3104412740"],
+    ["name" : "The Salvation Army Family Store & Donation Center","latitude" : 33.959841,"longitude" : 33.959841,"mediaURL" : "https://www.satruck.org","phoneNumber" : "3237597681"],
+    ["name" : "A Sense Of Home","latitude" : 33.916738,"longitude" : -118.335002,"mediaURL" : "https://www.asenseofhome.org","phoneNumber" : "3108048998"],
     ["name" : "Los Angeles Regional Food Bank","latitude" : 34.007484,"longitude" : -118.241887,"mediaURL" : "http://www.lafoodbank.org","phoneNumber" : "3232343030"],
     ["name" : "World Harvest Food Bank","latitude" : 34.043261,"longitude" : -118.318055,"mediaURL" : "https://www.worldharvestla.org","phoneNumber" : "2137462227"],
     ["name" : "Sova-Bay Food Pantry","latitude" : 34.054819,"longitude" : -118.384861,"mediaURL" : "https://www.jfsla.org/page.aspx?pid=300","phoneNumber" : "3102880286"],
@@ -91,4 +97,78 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.MapView.addAnnotations(mapAnnotations)
         // imageChoice = "pin2"
     }
-}
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let place = view.annotation?.title!
+        // view.annotation?.title!.lines
+        print("annotation title == \(place!)")
+        if place != "My Location" {
+            // pinSelected = true
+            phoneNumber.text = getPhone(name: place!)
+            mediaURL.text = getLink(name: place!)
+            nameOfPlace.text = place!
+            // getTheThings(name: place!)
+        }
+        // print(phoneNumber + " " + learnMore + " \(coordinateArray)")
+        // phoneNumber =
+        callButton.isHidden = false
+        linkButton.isHidden = false
+        
+    }
+    func getPhone(name: String) -> String {
+        var num = ""
+        for dict in shelterLocations {
+            if dict["name"] as? String == name {
+                num = dict["phoneNumber"] as! String
+            }
+        }
+        return num
+    }
+    func getLink(name: String) -> String {
+        var lin = ""
+        for dict in shelterLocations {
+            if dict["name"] as? String == name {
+                lin = dict["mediaURL"] as! String
+            }
+        }
+        return lin
+    }
+    
+    @IBAction func callNumber(_ sender: Any) {
+        callNumber(phoneNumber: phoneNumber.text!)
+    }
+    @IBAction func goToWebsite(_ sender: Any) {
+        let alertPrompt = UIAlertController(title: "Leave app?", message: "Open Safari to learn more about \(nameOfPlace.text!)", preferredStyle: .actionSheet)
+        let confirmAction = UIAlertAction(title: "OK, ready!", style: UIAlertAction.Style.default, handler: { (action) -> Void in
+            
+            if let url = URL(string: self.mediaURL.text!) {
+                UIApplication.shared.open(url, options: [:])
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "No thanks!", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        alertPrompt.addAction(confirmAction)
+        alertPrompt.addAction(cancelAction)
+        
+        present(alertPrompt, animated: true, completion: nil)
+        
+    }
+    func callNumber(phoneNumber: String) {
+        let alertPrompt = UIAlertController(title: "Make a call", message: "Ready to donate?", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "OK, ready!", style:
+            UIAlertAction.Style.default, handler: { (action) -> Void in
+        if let url = URL(string: "tel://\(phoneNumber)") {
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }
+        })
+        
+        let cancelAction = UIAlertAction(title: "No thanks!", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        alertPrompt.addAction(confirmAction)
+        alertPrompt.addAction(cancelAction)
+        
+        present(alertPrompt, animated: true, completion: nil)
+    }
+        }

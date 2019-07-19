@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185F7FD122E229E8009A1331 /* Image from iOS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185F7FD022E229E8009A1331 /* Image from iOS.jpg */; };
 		18EF11CF22DFC9C2008643A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF11CE22DFC9C2008643A0 /* AppDelegate.swift */; };
 		18EF11D422DFC9C2008643A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EF11D222DFC9C2008643A0 /* Main.storyboard */; };
 		18EF11D722DFC9C2008643A0 /* SHARE3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18EF11D522DFC9C2008643A0 /* SHARE3.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		185F7FD022E229E8009A1331 /* Image from iOS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Image from iOS.jpg"; path = "../../../Image from iOS.jpg"; sourceTree = "<group>"; };
 		18EF11CB22DFC9C2008643A0 /* SHARE3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHARE3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EF11CE22DFC9C2008643A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18EF11D322DFC9C2008643A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				18EF11D822DFC9C4008643A0 /* Assets.xcassets */,
 				18EF11DA22DFC9C4008643A0 /* LaunchScreen.storyboard */,
 				18EF11DD22DFC9C4008643A0 /* Info.plist */,
+				185F7FD022E229E8009A1331 /* Image from iOS.jpg */,
 				18EF11D522DFC9C2008643A0 /* SHARE3.xcdatamodeld */,
 			);
 			path = SHARE3;
@@ -137,6 +140,7 @@
 				18EF11DC22DFC9C4008643A0 /* LaunchScreen.storyboard in Resources */,
 				18EF11D922DFC9C4008643A0 /* Assets.xcassets in Resources */,
 				18EF11D422DFC9C2008643A0 /* Main.storyboard in Resources */,
+				185F7FD122E229E8009A1331 /* Image from iOS.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,13 +303,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56X6KW3DJ2;
+				DEVELOPMENT_TEAM = 3TH2764762;
 				INFOPLIST_FILE = SHARE3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = TD.SHARE3;
+				PRODUCT_BUNDLE_IDENTIFIER = "Allyssa-Lingad.SHARE3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,13 +321,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56X6KW3DJ2;
+				DEVELOPMENT_TEAM = 3TH2764762;
 				INFOPLIST_FILE = SHARE3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = TD.SHARE3;
+				PRODUCT_BUNDLE_IDENTIFIER = "Allyssa-Lingad.SHARE3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
